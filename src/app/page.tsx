@@ -1,113 +1,134 @@
-import Image from 'next/image'
-
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    return (
+        <main className="prose prose-sm max-w-none mx-[0.75in] my-[0.5in]">
+            <section id="Header">
+                <h1>Christopher Spencer</h1>
+                <p className="font-medium flex flex-row justify-between">
+                    <span>(347) 706-5294</span>
+                    <Separator />
+                    <span>cspencernd@gmail.com</span>
+                    <Separator />
+                    <span>linkedin.com/in/cspencernd</span>
+                    <Separator />
+                    <span>New York, NY</span>
+                </p>
+            </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+            {/* Summary & Skills */}
+            <section id="Summary">
+                <CategoryHeading>Summary & Skills</CategoryHeading>
+                <p>
+                    Meticulously organized, strong critical thinker, with ability to work
+                    independently. Adept at research and problem solving. Mindful of accuracy
+                    and efficiency.
+                </p>
+                <p className="font-medium flex flex-row justify-between">
+                    HTML, CSS
+                    <Separator />
+                    JavaScript, React
+                    <Separator />
+                    Node.JS, PostgreSQL
+                    <Separator />
+                    Python, C, Bash, Linux
+                    <Separator />
+                    82 WPM
+                </p>
+            </section>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+            {/* Work History */}
+            <section id="WorkHistory">
+                <CategoryHeading>Work History</CategoryHeading>
+                {workHistory.map((w, i) => (
+                    <WorkHistorySection key={i} {...w} />
+                ))}
+            </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            {/* Education */}
+            <section>
+                <CategoryHeading>Education</CategoryHeading>
+                <h4>Zero To Mastery Academy</h4>
+                <p>Web Development & Computer Science</p>
+                <h4>National Personal Training Institute</h4>
+                <p>Human Anatomy, Kinesiology, Exercise Science</p>
+            </section>
+        </main>
+    );
 }
+
+function List(props: React.HTMLAttributes<HTMLUListElement>) {
+    return <ul className="pl-0 prose-li:pl-0" {...props} />;
+}
+
+function Separator() {
+    return <span className="text-gray-300"> | </span>;
+}
+
+function CategoryHeading(props: React.HTMLAttributes<HTMLHeadingElement>) {
+    return <h3 className="bg-gray-200 px-2 py-1 rounded-md -mx-2" {...props} />;
+}
+
+type WorkHistoryProps = {
+    jobTitle: string;
+    date: string;
+    companyName: string;
+    location: string;
+    descriptors: string[];
+};
+
+function WorkHistorySection(props: WorkHistoryProps) {
+    const { jobTitle, companyName, descriptors, date, location } = props;
+
+    return (
+        <>
+            <h4 className="flex flex-row justify-between">
+                {jobTitle} <span>{date}</span>
+            </h4>
+            <h4 className="flex flex-row justify-between text-gray-400 font-bold">
+                {companyName} <span>{location}</span>
+            </h4>
+            <List>
+                {descriptors.map((d, i) => (
+                    <li key={i}>{d}</li>
+                ))}
+            </List>
+        </>
+    );
+}
+
+const workHistory: WorkHistoryProps[] = [
+    {
+        jobTitle: "Web Developer / Software Engineer",
+        date: "Current",
+        companyName: "Gryffyn Labs",
+        location: "Remote",
+        descriptors: [
+            "Successfully built and deployed fully functional websites.",
+            "Created an informative weather applet.",
+            "Contributed to open-source projects, and assisted with troubleshooting and bug fixes.",
+        ],
+    },
+
+    {
+        jobTitle: "Assistant Manger",
+        date: "2017 - 2020",
+        companyName: "Beyond Vape",
+        location: "New York, NY",
+        descriptors: [
+            "Keyholder and inventory management.",
+            "Consistently met and exceeded sales goals.",
+            "Provided high quality customer service and technical support.",
+            "Curated products to stock in the store.",
+        ],
+    },
+
+    {
+        jobTitle: "Stock Manager",
+        date: "2015 - 2017",
+        companyName: "Journeys",
+        location: "Brooklyn, NY",
+        descriptors: [
+            "Responsible for managing inventory as well as sending and receiving transfers between locations.",
+            "Efficiently and neatly organized the stock room.",
+        ],
+    },
+];
